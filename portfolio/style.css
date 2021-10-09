@@ -1,0 +1,483 @@
+:root {
+  --xPos: 50%;
+  --yPos: 50%;
+}
+
+@font-face {
+  font-family: "ModeSeven";
+  src: url("Modeseven-L3n5.ttf");
+}
+@font-face {
+  font-family: "Techno Hideo";
+  src: url("techno_hideo.ttf");
+}
+html > * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  height: auto;
+  color: #fff;
+  font-family: "ModeSeven";
+}
+#box {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  height: 90vh;
+  background: no-repeat
+    radial-gradient(
+      circle at var(--xPos) var(--yPos),
+      #00ff00 0,
+      rgba(255, 255, 255, 0) 20%
+    );
+  opacity: 0.5;
+  background-size: cover;
+  mask-image: url("pencil.svg");
+  -webkit-mask-image: url("pencil.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  overflow: hidden;
+}
+
+h2 {
+  color: #fff;
+  font-family: "ModeSeven";
+}
+
+.neonText {
+  font-family: "ModeSeven";
+  font-size: 3em;
+  color: #0f0;
+  text-transform: uppercase;
+  filter: drop-shadow(0 0 0.5rem #0f0);
+  -webkit-box-reflect: below -1rem linear-gradient(transparent, #0003);
+  transform: translate(10rem, -6rem);
+  position: absolute;
+}
+
+span {
+  border-right: 0.2em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.navbar {
+  background-image: linear-gradient(to top, transparent 0%, rgb(0, 0, 0) 40%);
+  color: #fff;
+  font-family: "ModeSeven";
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1vw 0;
+}
+
+.navlinks {
+  justify-self: flex-end;
+}
+.navlinks ul {
+  width: 30vw;
+  display: flex;
+  justify-content: flex-end;
+}
+.navlinks ul > li {
+  list-style: none;
+  margin-left: 5vw;
+}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+}
+.index {
+  font-family: "Techno Hideo";
+  color: rgba(255, 255, 255, 0.226);
+  font-size: 2rem;
+
+  transform: translate(2.5rem, -0.5rem);
+}
+.selected {
+  color: #fff;
+  transform: translate(-1.5rem, -2.2rem);
+  animation: flickerAnimation 0.2s infinite;
+}
+@keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.linkHover {
+  display: none;
+}
+a:hover {
+  filter: drop-shadow(0 0 10px #0f0);
+  color: #0f0;
+}
+a:hover + .linkHover {
+  position: absolute;
+  z-index: -1;
+  display: block;
+}
+.hero {
+  z-index: 22;
+  padding-left: 10vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bigIndex {
+  position: absolute;
+  right: 0;
+  bottom: -15rem;
+  color: rgba(255, 255, 255, 0.253);
+  font-family: "Techno Hideo";
+  font-size: 20rem;
+}
+.scrollIndex {
+  text-align: right;
+  position: absolute;
+  right: 30rem;
+  bottom: 10rem;
+  animation: flickerAnimation 2s infinite;
+}
+.scrollIcon {
+  font-size: 2rem;
+  position: absolute;
+  bottom: 9rem;
+  right: 28rem;
+  animation: fade_move_down 1s ease-in-out infinite;
+}
+@keyframes fade_move_down {
+  0% {
+    transform: translate(0, -10px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 10px);
+    opacity: 0;
+  }
+}
+
+/* --------------- PROJECTS SECTION */
+.projectSection {
+  background-image: linear-gradient(to top, #000 92%, transparent 100%);
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 9;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.projectSection h1 {
+  margin-top: 30vh;
+  font-family: "Techno Hideo";
+  color: #fff;
+  display: block;
+  font-size: 4rem;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.521));
+}
+.bigIndex2 {
+  font-family: "Techno Hideo";
+  position: sticky;
+  font-size: 20rem;
+  opacity: 0.2;
+  margin-bottom: -20rem;
+  top: 70vh;
+  align-self: flex-start;
+  z-index: 1;
+}
+.container {
+  width: 100%;
+}
+.projects {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-self: unset;
+  position: relative;
+  z-index: 999;
+}
+.containerBG {
+  background: no-repeat url("wires.png");
+  opacity: 0.4;
+  background-size: contain;
+  position: absolute;
+  transform: translate(-30rem);
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+.projectWrapper,
+.projectWrapperAlt {
+  width: 70vw;
+  display: flex;
+  margin: 10vh 5vw;
+}
+@media screen and (max-width: 1200px) {
+  .projectWrapper {
+    width: 90vw;
+  }
+}
+.projectWrapper {
+  align-self: flex-start;
+}
+.projectWrapperAlt {
+  align-self: flex-end;
+}
+
+.projectImg {
+  width: 100%;
+  height: 100%;
+  color: #0f0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid #0f0;
+}
+.projectName {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 15rem;
+
+  background-color: rgba(1, 27, 0, 0.712);
+  position: absolute;
+  opacity: 0;
+
+  transition: 0.2s;
+}
+.projectName p {
+  animation: flickerAnimation 0.5s infinite;
+}
+.projectImg img {
+  object-fit: cover;
+  max-width: 100%;
+  height: 100%;
+}
+.projectLeft {
+  width: 50%;
+  align-self: stretch;
+  background-color: #363636;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.projectLeft:hover .projectName {
+  opacity: 1;
+}
+.projectRight {
+  padding: 0 20px;
+  width: 50%;
+  height: 30vh;
+}
+.rightAlt {
+  text-align: right;
+}
+.projectNum {
+  font-size: smaller;
+  color: #0f0;
+}
+.projectDesc {
+  overflow-y: hidden;
+  height: 13vh;
+}
+.projectTitle {
+  font-family: "Techno Hideo";
+  font-size: 3rem;
+  padding: 1rem 0;
+}
+.www {
+  height: 2rem;
+}
+.projectLinks {
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+.projectLinks .selected {
+  display: none;
+  transform: translateY(-1em);
+}
+.projectLinks a {
+  border-right: 1px solid #0f0;
+  border-bottom: 1px solid #0f0;
+  position: relative;
+  text-decoration: none;
+  color: #0f0;
+  padding: 0 1.3rem;
+}
+.projectLinks a:hover + .selected {
+  position: absolute;
+  display: block;
+}
+
+.linksAlt {
+  justify-content: flex-end;
+}
+
+small {
+  color: rgb(153, 153, 153);
+}
+footer {
+  text-align: center;
+  margin: 5vh;
+}
+.separator {
+  height: 50vh;
+}
+
+.contact {
+  width: 80vw;
+  margin: 0 10vw;
+  display: grid;
+  grid-gap: 5vw;
+  grid-template-columns: 35vw 35vw;
+}
+
+
+.bigIndex3{
+    position: absolute;
+    transform: translateY(5rem);
+    z-index:-1;
+  right: 0;
+  color: rgba(255, 255, 255, 0.253);
+  font-family: "Techno Hideo";
+  font-size: 20rem;
+}
+.about h1{
+    font-size: 3rem;
+    font-family: 'Techno Hideo';
+}
+.tech {
+  display: flex;
+  align-items: center;
+}
+.techLeft {
+  color: rgb(151, 151, 151);
+  text-align: right;
+  margin-right: 2vw;
+  width: 30%;
+}
+.techRight{
+    height: 100%;
+    display: flex;
+    align-items:stretch;
+}
+ul {
+  list-style: none;
+}
+.social ul li::before {
+  content: "\2022";
+  font-weight: bold;
+  vertical-align: middle;
+  font-size: 2rem;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+.social a {
+  color: white;
+  text-decoration: none;
+}
+
+.purple::before {
+  color: purple;
+}
+.cyan::before {
+  color: aqua;
+}
+
+.contactForm{
+    padding-left: 5vw;
+    border-left: 1px solid #0f0;
+    display: flex;
+    flex-direction: column;
+
+}
+.contactForm h1{
+    font-size: 3rem;
+    font-family: 'Techno Hideo';
+}
+.contactForm form{
+    display: flex;
+    flex-direction: column;
+
+}
+.contactForm input{
+    font-family: 'ModeSeven';
+    color: #fff;
+    
+    border: none;
+    background-color: transparent;
+    outline: none;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #0f0;
+}
+textarea{
+    color: white;
+    font-family: inherit;
+    height: 5rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #0f0;
+    border-right: 1px solid #0f0;
+    background-color: transparent;
+}
+.contactForm button{
+    margin-top: 2vh;
+    align-self: flex-end;
+    width: 30%;
+    color:#0f0;
+    background-color: transparent;
+     border: none;
+     cursor: pointer;
+    border-bottom: 1px solid #0f0;
+    border-right: 1px solid #0f0;
+
+}
+button .selected{
+    visibility: hidden;
+    transform: translate(-2rem,1rem);
+}
+button:hover .selected{
+    visibility: visible;
+    
+}
+@media screen and (max-width:1000px) {
+    .contact{
+        grid-template-columns: auto;
+    }
+    .contactForm{
+        
+        border-left: none;
+    }
+    .contactForm h1{
+        align-self: flex-end;
+    }
+}
