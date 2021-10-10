@@ -224,7 +224,7 @@ a:hover + .linkHover {
 }
 .containerBG {
   background: no-repeat url("wires.png");
-  opacity: 0.6;
+  opacity: 0.9;
   background-size: contain;
   position: absolute;
   transform: translate(-30rem);
